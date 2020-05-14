@@ -1,0 +1,35 @@
+---
+desciption: "Spring Boot Namespaced Gateway"
+authors: ["Jimmie Fulton <jimmie.fulon@gmail.com"]
+languages: ["Java"]
+frameworks: ["Spring", "Spring Boot", "Spring Gateway", "Spring Cloud"]
+tags: ["API Gateway"]
+
+script:
+
+  - set:
+      project_name:
+        prompt: "Project Name:"
+
+      artifact_id:
+        value: '{{ project_name | snake_case }}-api-gateway'
+
+      group_id:
+        prompt: "Group ID:"
+        default: "com.example"
+
+      root_package:
+        value: '{{ group_id }}.{{ project_name | snake_case }}.gateway'
+
+      root_directory:
+        value: '{{ root_package | package_to_directory }}'
+
+      RootName:
+        value: '{{ project_name | pascal_case }}Gateway'
+
+      rootName:
+        value: '{{ RootName | camel_case }}'
+
+  - render:
+      directory:
+        source: contents
