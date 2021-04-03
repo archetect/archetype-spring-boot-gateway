@@ -1,3 +1,3 @@
 
-    archetect render git@github.com:archetect/archetype-spring-boot-gateway.git
+    archetect render https://github.com/archetect/archetype-spring-boot-gateway.git
     
